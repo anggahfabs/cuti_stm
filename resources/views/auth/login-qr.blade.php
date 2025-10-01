@@ -103,7 +103,6 @@
     <div class="tabs">
       <img src="assets/logo/stmlogo.png" alt="PT Serasi Tunggal Mandiri Logo" class="logo">
       <a href="{{ route('login') }}" class="tab">Login Email</a>
-      <!-- <a href="{{ route('dashboard') }}" class="tab">Login Email</a> -->
       <div class="tab active">QR</div>
     </div>
 
@@ -114,7 +113,7 @@
     <form action="#" method="POST" enctype="multipart/form-data">
       @csrf
       <input type="file" name="qr_code" style="font-size: 12px; margin-bottom: 10px;">
-      <a href="{{ route('dashboard') }}" type="submit" class="btn">Sign In</a>
+      <!-- <a href="{{ route('superadmin.dashboard') }}" type="submit" class="btn">Sign In</a> -->
     </form>
 
     <div class="footer">

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,37 +19,43 @@
             justify-content: center;
             height: 100vh;
         }
+
         .card {
             width: 320px;
             background: #fff;
             border-radius: 12px;
-            box-shadow: 6px 8px 10px rgba(0,0,0,0.25);
+            box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.25);
             padding: 20px;
             text-align: center;
-            transform: scale(1.25); 
+            transform: scale(1.25);
         }
+
         .tabs-container {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
         }
-     .header-container {
+
+        .header-container {
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             margin-bottom: 15px;
         }
+
         .logo {
             position: absolute;
             left: 35px;
             height: 55px;
         }
+
         .tabs {
             display: flex;
             justify-content: center;
         }
+
         .tab {
             padding: 5px 12px;
             border: 1px solid #C4BDBD;
@@ -57,11 +64,13 @@
             cursor: pointer;
             font-size: 12px;
         }
+
         .tab.active {
             border: 1px solid #2662D9;
             color: #2662D9;
             font-weight: 600;
         }
+
         .form-control {
             width: 100%;
             padding: 6px;
@@ -70,6 +79,7 @@
             border-radius: 5px;
             font-size: 12px;
         }
+
         .btn {
             width: 100%;
             background: #2662D9;
@@ -82,6 +92,7 @@
             cursor: pointer;
             margin-top: 10px;
         }
+
         .footer {
             font-size: 10px;
             margin-top: 15px;
@@ -89,6 +100,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="card">
         {{-- Logo and Tab Switch --}}
@@ -104,20 +116,25 @@
 
         {{-- Form Login --}}
         <form action="{{ route('login.post') }}" method="POST">
-    @csrf
-    <input type="text" name="username" class="form-control" placeholder="Username">
-    <input type="password" name="password" class="form-control" placeholder="Password">
+            @csrf
+            <input type="text" name="username" class="form-control" placeholder="Username">
+            <input type="password" name="password" class="form-control" placeholder="Password">
 
-    <div style="text-align: left; font-size: 12px;">
-        <input type="checkbox" name="remember"> Remember me
-    </div>
+            <div style="text-align: left; font-size: 12px;">
+                <input type="checkbox" name="remember"> Remember me
+            </div>
 
-    <button type="submit" class="btn">Login</button>
-</form>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <a href="{{ route('register') }}" class="btn" style="display:block; margin-top:8px; background:#28a745;">
+            Register
+        </a>
 
         <div class="footer">
             © 2025 PT Serasi Tunggal Mandiri. All rights reserved.
         </div>
     </div>
 </body>
+
 </html>
