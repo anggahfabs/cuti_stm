@@ -42,7 +42,7 @@
         <div class="card-body">
           <div class="table-responsive"> {{-- Tambahin wrapper ini --}}
             <table class="table table-hover table-bordered">
-              <thead class="thead-white">
+              <thead class="thead-primary">
                 <tr>
                   <th>#</th>
                   <th>NIK</th>

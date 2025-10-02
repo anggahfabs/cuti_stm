@@ -8,28 +8,6 @@
 
         {{-- Kanan: Icon & Profile --}}
         <ul class="navbar-nav d-flex align-items-center">
-            {{-- Envelope --}}
-            <li class="nav-item mx-2">
-                <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
-            </li>
-
-            {{-- Notifications --}}
-            <li class="nav-item dropdown mx-2">
-                <a class="nav-link dropdown-toggle position-relative" href="#" id="notifDropdown" role="button" data-toggle="dropdown">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge badge-danger position-absolute" style="top: -5px; right: -5px;">4</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right notif-box animated fadeIn" aria-labelledby="notifDropdown">
-                    <li>
-                        <div class="dropdown-title">You have 4 new notifications</div>
-                    </li>
-                </ul>
-            </li>
-
-            {{-- Layer --}}
-            <li class="nav-item mx-2">
-                <a class="nav-link" href="#"><i class="fas fa-layer-group"></i></a>
-            </li>
 
             {{-- Profile --}}
             <li class="nav-item dropdown mx-2">

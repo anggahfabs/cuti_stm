@@ -21,7 +21,7 @@
                 {{-- Section Title --}}
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
-                        <i class="fas fa-ellipsis-h"></i>
+                        <i class="fas fa-ellipsis-h" style="color: #fff;"></i>
                     </span>
                     <h4 class="text-section">Cuti Karyawan</h4>
                 </li>
@@ -29,7 +29,7 @@
                 {{-- Dashboard --}}
                 <li class="nav-item {{ request()->routeIs('superadmin.dashboard') ? 'active' : '' }} ">
                     <a href="{{ route('superadmin.dashboard') }}">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-home" style="color: #fff;"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
@@ -37,7 +37,7 @@
                 {{-- Manajemen User --}}
                 <li class="nav-item {{ request()->routeIs('superadmin.karyawan') ? 'active' : '' }} ">
                     <a href="{{ route('superadmin.karyawan') }}">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-users" style="color: #fff;"></i>
                         <p>Data Karyawan</p>
                     </a>
                 </li>
@@ -46,11 +46,11 @@
                 {{-- Cuti --}}
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#cutiMenu">
-                        <i class="fas fa-calendar-check"></i>
+                        <i class="fas fa-calendar-check" style="color: #fff;"></i>
                         <p>Pengajuan Cuti</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="cutiMenu">
+                    <div class="collapse" id="cutiMenu" style="color: #fff;">
                         <ul class="nav nav-collapse">
                             <li><a href="#"><span class="sub-item">Pengajuan Cuti</span></a></li>
                             <li><a href="#"><span class="sub-item">Pengajuan Medical</span></a></li>
@@ -62,10 +62,18 @@
 
                 {{-- Laporan --}}
                 <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-file-alt"></i>
+                    <a data-toggle="collapse" href="#laporanMenu">
+                        <i class="fas fa-file-alt" style="color: #fff;"></i>
                         <p>Laporan</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="laporanMenu" style="color: #fff;">
+                        <ul class="nav nav-collapse">
+                            <li><a href="#"><span class="sub-item">Data Laporan Cuti</span></a></li>
+                            <li><a href="#"><span class="sub-item">Data Laporan Medical</span></a></li>
+                            <li><a href="#"><span class="sub-item">Data Laporan Referensi</span></a></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </div>

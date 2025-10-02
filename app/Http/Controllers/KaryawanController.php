@@ -13,23 +13,26 @@ class KaryawanController extends Controller
         $search = $request->search;
 
         $query = DB::table('user')
-            ->join('departemen', 'user.departemen_id', '=', 'departemen.departemen_id')
-            ->join('jabatan', 'user.jabatan_id', '=', 'jabatan.jabatan_id')
-            ->join('role', 'user.role_id', '=', 'role.role_id')
-            ->select(
-                'user.user_id',
-                'user.nik',
-                'user.nama_lengkap',
-                'user.email',
-                'user.no_hp',
-                'user.alamat',
-                'user.tanggal_masuk',
-                'user.status_karyawan',
-                'user.qr_code',
-                'departemen.nama_departemen',
-                'jabatan.nama_jabatan',
-                'role.nama_role'
-            );
+    ->leftJoin('departemen', 'user.departemen_id', '=', 'departemen.departemen_id')
+    ->leftJoin('jabatan', 'user.jabatan_id', '=', 'jabatan.jabatan_id')
+    ->leftJoin('role', 'user.role_id', '=', 'role.role_id')
+    ->select(
+        'user.user_id',
+        'user.nik',
+        'user.nama_lengkap',
+        'user.email',
+        'user.no_hp',
+        'user.alamat',
+        'user.tanggal_masuk',
+        'user.status_karyawan',
+        'user.qr_code',
+        'departemen.nama_departemen',
+        'jabatan.nama_jabatan',
+        'role.nama_role'
+    );
+
+            $karyawan = DB::table('user')->get();
+
 
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
@@ -74,7 +77,8 @@ class KaryawanController extends Controller
             'alamat'          => $request->alamat,
             'tanggal_masuk'   => $request->tanggal_masuk,
             'status_karyawan' => $request->status_karyawan,
-            'qr_code'         => $request->qr_code ?? null,
+            'qr_code'         => $request->qr_code,
+            'password'         => $request->password,
             'created_at'      => now(),
             'updated_at'      => now(),
         ]);
