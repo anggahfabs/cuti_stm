@@ -127,9 +127,7 @@
             <button type="submit" class="btn">Login</button>
         </form>
 
-        <a href="{{ route('register') }}" class="btn" style="display:block; margin-top:8px; background:#28a745;">
-            Register
-        </a>
+      
 
         <div class="footer">
             © 2025 PT Serasi Tunggal Mandiri. All rights reserved.
