@@ -15,6 +15,12 @@ Route::get('/', function () {
 // --------------------
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'doLogin'])->name('login.post');
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect()->route('login');
+})->name('logout');
 
 // --------------------
 // Login QR routes
@@ -31,9 +37,68 @@ Route::prefix('superadmin')->group(function () {
         return view('superadmin.dashboard');
     })->name('superadmin.dashboard');
 
+    Route::get('cuti', function () {
+        return view('superadmin.cuti');
+    })->name('superadmin.cuti');
+
+     Route::get('medical', function () {
+        return view('superadmin.medical');
+    })->name('superadmin.medical');
+
+    Route::get('kacamata', function () {
+        return view('superadmin.kacamata');
+    })->name('superadmin.kacamata');
+
     // Karyawan (pakai controller)
     Route::get('karyawan', [KaryawanController::class, 'index'])->name('superadmin.karyawan');
     Route::post('karyawan', [KaryawanController::class, 'store'])->name('superadmin.karyawan.store');
     Route::put('karyawan/{id}', [KaryawanController::class, 'update'])->name('superadmin.karyawan.update');
     Route::delete('karyawan/{id}', [KaryawanController::class, 'destroy'])->name('superadmin.karyawan.destroy');
 });
+
+// --------------------
+// admin routes
+// --------------------
+Route::prefix('admin')->group(function () {
+    Route::get('dashboard', function () {
+        return view('admin.dashboardadmin');
+    })->name('admin.dashboardadmin');
+
+       // Data Karyawan
+    Route::get('karyawan', function () {
+        return view('admin.karyawanadmin'); 
+    })->name('admin.karyawanadmin');
+    // Data Karyawan → pakai controller yang sama
+    Route::get('karyawan', [KaryawanController::class, 'index'])->name('admin.karyawanadmin');
+    Route::post('karyawan', [KaryawanController::class, 'store'])->name('admin.karyawanadmin.store');
+    Route::put('karyawan/{id}', [KaryawanController::class, 'update'])->name('admin.karyawanadmin.update');
+    Route::delete('karyawan/{id}', [KaryawanController::class, 'destroy'])->name('admin.karyawanadmin.destroy');
+});
+
+// --------------------
+// kadep routes
+// --------------------
+Route::prefix('kadep')->group(function () {
+    Route::get('dashboard', function () {
+        return view('kadep.dashboard');
+    })->name('kadep.dashboard');
+
+       // Data Pengajuan
+    Route::get('pengajuan', function () {
+        return view('kadep.pengajuan'); 
+    })->name('kadep.pengajuan');
+
+        // Monitoring Staff
+    Route::get('monitoring', function () {
+        return view('kadep.monitoring'); 
+    })->name('kadep.monitoring');
+});
+
+// --------------------
+// bmo routes
+// --------------------
+Route::prefix('bmo')->group(function () {
+    Route::get('dashboard', function () {
+        return view('bmo.dashboard');
+    })->name('bmo.dashboard');
+   }); 

@@ -30,4 +30,12 @@ class User extends Authenticatable
         'qr_code',
         'password',
     ];
+    
+public function role()
+{
+    // 'role_id' = kolom FK di tabel users
+    // 'role_id' = PK di tabel role
+    return $this->belongsTo(Role::class, 'role_id', 'role_id');
+}
+
 }

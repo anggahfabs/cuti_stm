@@ -38,6 +38,9 @@ class QrLoginController extends Controller
     // login user
     Auth::login($user);
 
+    // Pastikan role ikut ke-load
+    $user->load('role');
+
     // arahkan ke dashboard sesuai role
     switch (strtolower($namaRole)) {
         case 'superadmin':
@@ -47,7 +50,7 @@ class QrLoginController extends Controller
         case 'bmo':
             return redirect()->route('bmo.dashboard');
         case 'admin':
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.dashboardadmin');
         case 'staff':
             return redirect()->route('staff.dashboard');
         default:

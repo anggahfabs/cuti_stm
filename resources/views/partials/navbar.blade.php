@@ -21,7 +21,15 @@
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    {{-- Logout pakai form POST --}}
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </form>
+                    </li>
                 </ul>
             </li>
         </ul>
