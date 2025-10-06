@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\QrLoginController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Middleware\VerifyCsrfToken;
+use App\Http\Controllers\DashboardController;
 // Root → arahkan ke login
 Route::get('/', function () {
     return redirect()->route('login');
@@ -102,3 +103,8 @@ Route::prefix('bmo')->group(function () {
         return view('bmo.dashboard');
     })->name('bmo.dashboard');
    }); 
+
+
+//routes dashboard//
+
+Route::get('/superadmin/dashboard', [DashboardController::class, 'index'])->name('superadmin.dashboard');
