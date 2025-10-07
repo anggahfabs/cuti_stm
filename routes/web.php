@@ -108,3 +108,20 @@ Route::prefix('bmo')->group(function () {
 //routes dashboard//
 
 Route::get('/superadmin/dashboard', [DashboardController::class, 'index'])->name('superadmin.dashboard');
+
+
+
+// --------------------
+// staff routes
+// --------------------
+
+Route::prefix('staff')->group(function () {
+    Route::get('dashboard', function () {
+        return view('staff.dashboard');
+    })->name('staff.dashboard');
+
+    Route::get('ajukan-cuti', function () {
+        return view('staff.ajukan_cuti');
+    })->name('staff.ajukan_cuti');
+});
+
