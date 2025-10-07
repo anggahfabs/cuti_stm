@@ -113,22 +113,26 @@
         </div>
 
         <h4 style="font-size: 14px; margin-bottom: 15px;">SELAMAT DATANG DIHALAMAN LOGIN!</h4>
-
+        @if(session('error'))
+        <div class="alert alert-warning" style="color: red;">
+            {{ session('error') }}
+        </div>
+        @endif
         {{-- Form Login --}}
-       <form action="{{ route('login.post') }}" method="POST">
-    @csrf
-    <input type="text" name="nik" class="form-control" placeholder="NIK">
-    <input type="password" name="password" class="form-control" placeholder="Password">
+        <form action="{{ route('login.post') }}" method="POST">
+            @csrf
+            <input type="text" name="nik" class="form-control" placeholder="NIK">
+            <input type="password" name="password" class="form-control" placeholder="Password">
 
-    <div style="text-align: left; font-size: 12px;">
-        <input type="checkbox" name="remember"> Remember me
-    </div>
+            <div style="text-align: left; font-size: 12px;">
+                <input type="checkbox" name="remember"> Remember me
+            </div>
 
-    <button type="submit" class="btn">Login</button>
-</form>
+            <button type="submit" class="btn">Login</button>
+        </form>
 
 
-      
+
 
         <div class="footer">
             © 2025 PT Serasi Tunggal Mandiri. All rights reserved.

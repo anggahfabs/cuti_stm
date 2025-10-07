@@ -97,7 +97,7 @@
 
                     <!-- Pengganti -->
                     <div class="col-md-6">
-                        <label for="pengganti_id" class="form-label fw-semibold">ID Pengganti (opsional)</label>
+                        <label for="pengganti_id" class="form-label fw-semibold">ID Pengganti HARUS 1 DEPARTEMEN!</label>
                         <input type="text" class="form-control" id="pengganti_id" name="pengganti_id" placeholder="Masukkan user_id pengganti">
                     </div>
                 </div>

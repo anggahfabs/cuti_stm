@@ -49,6 +49,12 @@ class User extends Authenticatable
         return $this->belongsTo(\App\Models\Departemen::class, 'departemen_id', 'departemen_id');
     }
 
+    // Relasi ke tabel jabatan
+    public function jabatan()
+    {
+        return $this->belongsTo(\App\Models\Jabatan::class, 'jabatan_id', 'jabatan_id');
+    }
+
     // Laravel butuh identifier unik (biasanya "email", tapi kita pakai "nik")
     public function getAuthIdentifierName()
     {

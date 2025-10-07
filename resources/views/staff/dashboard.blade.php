@@ -17,12 +17,12 @@
             <div style="display: flex; align-items: center; gap: 12px;">
                 <i class="fas fa-exclamation-triangle" style="color: red; font-size: 24px;"></i>
                 <p style="font-size: 16px; font-weight: 600; margin: 0;">
-                    Data karyawan Anda belum lengkap! Silakan lengkapi data terlebih dahulu untuk dapat mengajukan Cuti, Claim, maupun Medical!
+                    Jika ada data yang tidak sesuai atau belum lengkap, hubungi Superadmin!
                 </p>
             </div>
-            <a href="{{ route('staff.ajukan_cuti') }}" 
+            <a href="{{ route('staff.settings') }}" 
                style="background: #d9d9d9; border: none; border-radius: 8px; padding: 8px 16px; font-weight: 600; cursor: pointer; text-decoration: none; color: #000;">
-                Lengkapi Sekarang
+                Lihat Profl!
             </a>
         </div>
     @endif

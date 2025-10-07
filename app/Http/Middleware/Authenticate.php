@@ -13,6 +13,7 @@ class Authenticate extends Middleware
     {
         // Kalau user belum login, arahkan ke halaman login
         if (! $request->expectsJson()) {
+             session()->flash('error', 'Silahkan Login Terlebih dahulu!');
             return route('login');
         }
 

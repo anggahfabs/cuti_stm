@@ -68,9 +68,9 @@
                     <div class="collapse" id="pengajuanMenu">
                         <ul class="nav nav-collapse">
                             <li><a href="{{ route('staff.ajukan_cuti') }}"><span class="sub-item" style="color: #000;">Izin Cuti</span></a></li>
-                            <li><a href="#"><span class="sub-item" style="color: #000;">Izin Meninggalkan Pekerjaan</span></a></li>
-                            <li><a href="#"><span class="sub-item" style="color: #000;">Izin Terlambat</span></a></li>
-                            <li><a href="#"><span class="sub-item" style="color: #000;">Settings</span></a></li>
+                            <li><a href="{{ route('staff.izin_meninggalkan') }}"><span class="sub-item" style="color: #000;">Izin Meninggalkan Kerja</span></a></li>
+                            <li><a href="{{ route('staff.izin_terlambat') }}"><span class="sub-item" style="color: #000;">Izin Terlambat</span></a></li>
+                            <li><a href="{{ route('staff.settings') }}"><span class="sub-item" style="color: #000;">Settings</span></a></li>
                         </ul>
                     </div>
                 </li>
