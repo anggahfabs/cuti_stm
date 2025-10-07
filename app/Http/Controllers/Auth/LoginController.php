@@ -4,48 +4,71 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    // Tampilkan halaman login
     public function showLogin()
     {
         return view('auth.login');
     }
 
+    // Proses login dengan NIK & password
     public function doLogin(Request $request)
     {
-        // contoh validasi manual
-        if ($request->username === 'superadmin' && $request->password === '1234') {
-            // simpan role ke session
-            session(['role' => 'superadmin']);
-            return redirect()->route('superadmin.dashboard');
+        // Validasi input
+        $request->validate([
+            'nik'      => 'required',
+            'password' => 'required',
+        ], [
+            'nik.required'      => 'NIK wajib diisi.',
+            'password.required' => 'Password wajib diisi.',
+        ]);
+
+        // Cari user berdasarkan NIK
+        $user = User::where('nik', $request->nik)->first();
+
+        // Cek user & password
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return back()->withErrors(['login' => 'NIK atau password salah']);
         }
 
-        if ($request->username === 'admin' && $request->password === '1234') {
-            // simpan role ke session
-            session(['role' => 'admin']);
-            return redirect()->route('admin.dashboardadmin');
-        }
+        // Login user
+        Auth::login($user, $request->has('remember')); // support remember me
 
-        
-        if ($request->username === 'kadep' && $request->password === '1234') {
-            // simpan role ke session
-            session(['role' => 'Kadep']);
-            return redirect()->route('kadep.dashboard');
-        }
+        // Load relasi role
+        $user->load('role');
 
-        if ($request->username === 'bmo' && $request->password === '1234') {
-            // simpan role ke session
-            session(['role' => 'bmo']);
-            return redirect()->route('bmo.dashboard');
-        }
+        // Ambil nama role dari relasi
+        $role = strtolower(trim($user->role->nama_role ?? ''));
 
-        return back()->withErrors(['login' => 'Username atau password salah']);
+        // Redirect sesuai role
+        switch ($role) {
+            case 'superadmin':
+                return redirect()->route('superadmin.dashboard');
+            case 'admin':
+                return redirect()->route('admin.dashboardadmin'); // pastikan route ada
+            case 'kadep':
+                return redirect()->route('kadep.dashboard');
+            case 'bmo':
+                return redirect()->route('bmo.dashboard');
+            case 'staff':
+                return redirect()->route('staff.dashboard');
+            default:
+                Auth::logout();
+                return redirect()->route('login')->withErrors([
+                    'login' => 'Role tidak dikenali.'
+                ]);
+        }
     }
 
+    // Logout
     public function logout()
     {
-        session()->forget('role'); // hapus session role
-        return redirect()->route('auth.login');
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

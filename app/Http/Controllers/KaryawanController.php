@@ -9,57 +9,65 @@ use Illuminate\Support\Facades\DB;
 class KaryawanController extends Controller
 {
     public function index(Request $request)
-    {
-        $search = $request->search;
+{
+    $search = $request->search;
+    $departemenFilter = $request->departemen; // ⬅️ ambil dari dropdown
 
-        $query = DB::table('user')
-            ->leftJoin('departemen', 'user.departemen_id', '=', 'departemen.departemen_id')
-            ->leftJoin('jabatan', 'user.jabatan_id', '=', 'jabatan.jabatan_id')
-            ->leftJoin('role', 'user.role_id', '=', 'role.role_id')
-            ->select(
-                'user.user_id',
-                'user.nik',
-                'user.nama_lengkap',
-                'user.email',
-                'user.no_hp',
-                'user.alamat',
-                'user.tanggal_masuk',
-                'user.status_karyawan',
-                'user.qr_code',
-                'departemen.nama_departemen',
-                'jabatan.nama_jabatan',
-                'role.nama_role'
-            );
-
-        $karyawan = DB::table('user')->get();
-
-        if (!empty($search)) {
-            $query->where(function ($q) use ($search) {
-                $q->where('user.nama_lengkap', 'LIKE', "%$search%")
-                  ->orWhere('user.nik', 'LIKE', "%$search%")
-                  ->orWhere('departemen.nama_departemen', 'LIKE', "%$search%")
-                  ->orWhere('jabatan.nama_jabatan', 'LIKE', "%$search%")
-                  ->orWhere('role.nama_role', 'LIKE', "%$search%");
+    $query = DB::table('user')
+        ->leftJoin('departemen', 'user.departemen_id', '=', 'departemen.departemen_id')
+        ->leftJoin('jabatan', 'user.jabatan_id', '=', 'jabatan.jabatan_id')
+        ->leftJoin('role', 'user.role_id', '=', 'role.role_id')
+        ->select(
+            'user.user_id',
+            'user.nik',
+            'user.nama_lengkap',
+            'user.email',
+            'user.no_hp',
+            'user.alamat',
+            'user.tanggal_masuk',
+            'user.status_karyawan',
+            'user.qr_code',
+            'departemen.nama_departemen',
+            'jabatan.nama_jabatan',
+            'role.nama_role'
+        )
+        ->when(!empty($search), function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('user.nama_lengkap', 'LIKE', "%$search%")
+                    ->orWhere('user.nik', 'LIKE', "%$search%")
+                    ->orWhere('departemen.nama_departemen', 'LIKE', "%$search%")
+                    ->orWhere('jabatan.nama_jabatan', 'LIKE', "%$search%")
+                    ->orWhere('role.nama_role', 'LIKE', "%$search%");
             });
-        }
+        })
+        ->when(!empty($departemenFilter), function ($q) use ($departemenFilter) {
+            $q->where('user.departemen_id', $departemenFilter);
+        }) // ⬅️ filter departemen aktif
+        ->orderBy('user.nama_lengkap', 'asc');
 
-        $karyawan = $query->get();
+    // ✅ Gunakan paginate agar bisa pakai links()
+    $karyawan = $query->paginate(10);
 
-        // untuk dropdown
-        $departemen = DB::table('departemen')->get();
-        $jabatan    = DB::table('jabatan')->get();
-        $role       = DB::table('role')->get();
+    // ✅ Tambah ->appends agar filter & search tetap tersimpan saat pindah halaman
+    $karyawan->appends($request->all());
 
-        // superadmin
-        if (request()->is('superadmin/*')) {
-            return view('superadmin.karyawan', compact('karyawan', 'departemen', 'jabatan', 'role'));
-        }
+    // dropdown
+    $departemen = DB::table('departemen')->orderBy('nama_departemen')->get();
+    $jabatan    = DB::table('jabatan')->get();
+    $role       = DB::table('role')->get();
 
-        // admin
-        if (request()->is('admin/*')) {
-            return view('admin.karyawanadmin', compact('karyawan', 'departemen', 'jabatan', 'role'));
-        }
+    // superadmin
+    if ($request->is('superadmin/*')) {
+        return view('superadmin.karyawan', compact('karyawan', 'departemen', 'jabatan', 'role'));
     }
+
+    // admin
+    if ($request->is('admin/*')) {
+        return view('admin.karyawanadmin', compact('karyawan', 'departemen', 'jabatan', 'role'));
+    }
+}
+
+
 
     public function store(Request $request)
     {

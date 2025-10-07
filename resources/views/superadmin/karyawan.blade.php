@@ -25,6 +25,22 @@
         </div>
       </form>
     </div>
+     <form action="{{ route('superadmin.karyawan') }}" method="GET" class="mb-3 d-flex gap-2">
+    {{-- Filter Departemen --}}
+    <select class="form-control w-auto" name="departemen" onchange="this.form.submit()">
+        <option value="">-- Semua Departemen --</option>
+        @foreach ($departemen as $dept)
+            <option value="{{ $dept->departemen_id }}" {{ request('departemen') == $dept->departemen_id ? 'selected' : '' }}>
+                {{ $dept->nama_departemen }}
+            </option>
+        @endforeach
+    </select>
+
+    {{-- Pencarian --}}
+    <input type="text" name="search" class="form-control w-auto" placeholder="Cari nama / NIK" value="{{ request('search') }}">
+
+    <button type="submit" class="btn btn-primary">Cari</button>
+</form>
     <div class="col-md-6 text-right">
       <button class="btn btn-primary" data-toggle="modal" data-target="#addKaryawanModal">
         <i class="fas fa-plus"></i> Tambah Karyawan
@@ -62,7 +78,7 @@
               <tbody>
                 @forelse($karyawan as $index => $row)
                 <tr>
-                  <td>{{ $index + 1 }}</td>
+                  <td>{{ $karyawan->firstItem() + $index }}</td>
                   <td>{{ $row->nik }}</td>
                   <td>{{ $row->nama_lengkap }}</td>
                   <td>{{ $row->nama_departemen }}</td>
@@ -101,6 +117,9 @@
               </tbody>
             </table>
           </div> {{-- end .table-responsive --}}
+          <div class="d-flex justify-content-center mt-3">
+  {{ $karyawan->links('pagination::bootstrap-4') }}
+</div>
         </div>
       </div>
     </div>

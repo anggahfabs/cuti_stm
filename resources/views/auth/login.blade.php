@@ -115,17 +115,18 @@
         <h4 style="font-size: 14px; margin-bottom: 15px;">SELAMAT DATANG DIHALAMAN LOGIN!</h4>
 
         {{-- Form Login --}}
-        <form action="{{ route('login.post') }}" method="POST">
-            @csrf
-            <input type="text" name="username" class="form-control" placeholder="Username">
-            <input type="password" name="password" class="form-control" placeholder="Password">
+       <form action="{{ route('login.post') }}" method="POST">
+    @csrf
+    <input type="text" name="nik" class="form-control" placeholder="NIK">
+    <input type="password" name="password" class="form-control" placeholder="Password">
 
-            <div style="text-align: left; font-size: 12px;">
-                <input type="checkbox" name="remember"> Remember me
-            </div>
+    <div style="text-align: left; font-size: 12px;">
+        <input type="checkbox" name="remember"> Remember me
+    </div>
 
-            <button type="submit" class="btn">Login</button>
-        </form>
+    <button type="submit" class="btn">Login</button>
+</form>
+
 
       
 

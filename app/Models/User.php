@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
-    // Tabel yang dipakai (default Laravel = 'users', kita ganti ke 'user')
+    // Nama tabel
     protected $table = 'user';
 
-    // Primary key custom
+    // Primary key
     protected $primaryKey = 'user_id';
 
     // Kolom yang bisa diisi mass-assignment
@@ -30,12 +31,27 @@ class User extends Authenticatable
         'qr_code',
         'password',
     ];
-    
-public function role()
-{
-    // 'role_id' = kolom FK di tabel users
-    // 'role_id' = PK di tabel role
-    return $this->belongsTo(Role::class, 'role_id', 'role_id');
-}
 
+    // Sembunyikan kolom sensitif saat serialisasi
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    // Tambahkan cast kalau nanti butuh remember_token
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
+
+    // Relasi ke tabel role
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id', 'role_id');
+    }
+
+    // Laravel butuh identifier unik (biasanya "email", tapi kita pakai "nik")
+    public function getAuthIdentifierName()
+    {
+        return 'nik';
+    }
 }

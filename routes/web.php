@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\QrLoginController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Middleware\VerifyCsrfToken;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StaffController;
 // Root → arahkan ke login
 Route::get('/', function () {
     return redirect()->route('login');

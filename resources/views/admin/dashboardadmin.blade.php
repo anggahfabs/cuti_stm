@@ -8,7 +8,7 @@
   {{-- Header Dashboard --}}
   <div class="row">
     <div class="col-md-12">
-      <h2 class="mt-4" style="font-weight: bold;">Dashboard</h2>
+      <h2 class="mt-4" style="font-weight: bold;">Dashboard Admin</h2>
       <p>Selamat datang di sistem cuti karyawan STM.</p>
     </div>
   </div>

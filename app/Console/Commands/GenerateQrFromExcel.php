@@ -44,7 +44,7 @@ class GenerateQrFromExcel extends Command
             $nik      = trim($r['nik']);
             $email    = trim($r['email'] ?? '');
 
-            // 🔹 Cari atau buat departemen (TANPA created_at & updated_at)
+            // 🔹 Cari atau buat departemen (tanpa created_at/updated_at)
             $departemen = DB::table('departemen')
                 ->whereRaw('LOWER(TRIM(nama_departemen)) = ?', [strtolower($deptName)])
                 ->first();
@@ -58,7 +58,7 @@ class GenerateQrFromExcel extends Command
                 $deptId = $departemen->departemen_id;
             }
 
-            // 🔹 Cari atau buat role (TANPA created_at & updated_at)
+            // 🔹 Cari atau buat role (tanpa created_at/updated_at)
             $role = DB::table('role')
                 ->whereRaw('LOWER(TRIM(nama_role)) = ?', [strtolower($roleName)])
                 ->first();
@@ -77,18 +77,19 @@ class GenerateQrFromExcel extends Command
                 'nama_lengkap'    => $r['nama_lengkap'],
                 'departemen_id'   => $deptId,
                 'role_id'         => $roleId,
-                'qr_code'         => $r['qr_file'], // simpan path relatif
+                'qr_code'         => $r['qr_file'], // path relatif
                 'email'           => $email ?: null,
                 'status_karyawan' => 'aktif',
-                'updated_at'      => now()
+                'updated_at'      => now(),
             ];
 
-            // cek user sudah ada atau belum
+            // 🔹 Jika user belum ada → buat baru
             $existing = DB::table('user')->where('nik', $nik)->first();
             if (!$existing) {
-                $data['nik']       = $nik;
-                $data['password']  = bcrypt(Str::random(10));
+                $data['nik']        = $nik;
+                $data['password']   = bcrypt('serasitunggal'); // Default password
                 $data['created_at'] = now();
+                $this->info("Created new user NIK={$nik} with default password 'serasitunggal'");
             }
 
             DB::table('user')->updateOrInsert(['nik' => $nik], $data);
