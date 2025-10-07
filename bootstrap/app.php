@@ -11,7 +11,24 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        /**
+         * -----------------------------------------
+         * REGISTERING GLOBAL & ROUTE MIDDLEWARE
+         * -----------------------------------------
+         */
+
+        // ✅ Tambahkan middleware bawaan web Laravel
+        $middleware->web(append: [
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+        ]);
+
+        // ✅ Alias middleware biar bisa dipakai di route
+        $middleware->alias([
+            'auth' => \App\Http\Middleware\Authenticate::class,  // wajib login
+            'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
