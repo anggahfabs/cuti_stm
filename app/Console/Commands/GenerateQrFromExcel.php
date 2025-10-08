@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Carbon\Carbon;
 
 class GenerateQrFromExcel extends Command
 {
@@ -22,7 +23,7 @@ class GenerateQrFromExcel extends Command
         $outputDir = base_path('public/qr_code');
 
         $process = new Process([$python, $script, base_path($excel), $outputDir]);
-        $process->setTimeout(300); // 5 minutes
+        $process->setTimeout(300);
         $process->run();
 
         if (!$process->isSuccessful()) {
@@ -41,10 +42,11 @@ class GenerateQrFromExcel extends Command
         foreach ($rows as $r) {
             $deptName = trim($r['nama_departemen']);
             $roleName = trim($r['nama_role']);
+            $jabatanName = trim($r['nama_jabatan'] ?? '');
             $nik      = trim($r['nik']);
-            $email    = trim($r['email'] ?? '');
+            $tanggalMasukRaw = trim($r['tanggal_masuk'] ?? '');
 
-            // 🔹 Cari atau buat departemen (tanpa created_at/updated_at)
+            // 🔹 Departemen
             $departemen = DB::table('departemen')
                 ->whereRaw('LOWER(TRIM(nama_departemen)) = ?', [strtolower($deptName)])
                 ->first();
@@ -58,7 +60,7 @@ class GenerateQrFromExcel extends Command
                 $deptId = $departemen->departemen_id;
             }
 
-            // 🔹 Cari atau buat role (tanpa created_at/updated_at)
+            // 🔹 Role
             $role = DB::table('role')
                 ->whereRaw('LOWER(TRIM(nama_role)) = ?', [strtolower($roleName)])
                 ->first();
@@ -72,22 +74,51 @@ class GenerateQrFromExcel extends Command
                 $roleId = $role->role_id;
             }
 
-            // 🔹 Data untuk user
+            // 🔹 Jabatan
+            $jabatanId = null;
+            if (!empty($jabatanName)) {
+                $jabatan = DB::table('jabatan')
+                    ->whereRaw('LOWER(TRIM(nama_jabatan)) = ?', [strtolower($jabatanName)])
+                    ->first();
+
+                if (!$jabatan) {
+                    $jabatanId = DB::table('jabatan')->insertGetId([
+                        'nama_jabatan' => $jabatanName
+                    ]);
+                    $this->info("Created jabatan: {$jabatanName} (id={$jabatanId})");
+                } else {
+                    $jabatanId = $jabatan->jabatan_id;
+                }
+            }
+
+            // 🔹 Konversi tanggal masuk
+            $tanggalMasuk = null;
+            if (!empty($tanggalMasukRaw)) {
+                try {
+                    // dukung format YYYY-MM-DD atau YYYY/MM/DD
+                    $tanggalMasuk = Carbon::parse(str_replace('/', '-', $tanggalMasukRaw))->format('Y-m-d');
+                } catch (\Exception $e) {
+                    $this->warn("⚠️ Format tanggal tidak dikenali untuk NIK {$nik}: {$tanggalMasukRaw}");
+                }
+            }
+
+            // 🔹 Data user
             $data = [
                 'nama_lengkap'    => $r['nama_lengkap'],
                 'departemen_id'   => $deptId,
                 'role_id'         => $roleId,
-                'qr_code'         => $r['qr_file'], // path relatif
-                'email'           => $email ?: null,
+                'jabatan_id'      => $jabatanId,
+                'tanggal_masuk'   => $tanggalMasuk,
+                'qr_code'         => $r['qr_file'],
                 'status_karyawan' => 'aktif',
                 'updated_at'      => now(),
             ];
 
-            // 🔹 Jika user belum ada → buat baru
+            // 🔹 Cek user
             $existing = DB::table('user')->where('nik', $nik)->first();
             if (!$existing) {
                 $data['nik']        = $nik;
-                $data['password']   = bcrypt('serasitunggal'); // Default password
+                $data['password']   = bcrypt('serasitunggal');
                 $data['created_at'] = now();
                 $this->info("Created new user NIK={$nik} with default password 'serasitunggal'");
             }

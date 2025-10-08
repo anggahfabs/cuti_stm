@@ -12,18 +12,18 @@
 
             {{-- ALERT SUCCESS --}}
             @if(session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
             {{-- ALERT ERROR --}}
             @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul class="mb-0">
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
 
             {{-- FORM AJUKAN CUTI --}}
@@ -44,23 +44,23 @@
                     </div>
 
                     <!-- Departemen -->
-<div class="col-md-6">
-    <label for="departemen" class="form-label fw-semibold">Departemen</label>
-    <input type="text" class="form-control" id="departemen" 
-           value="{{ $user->departemen->nama_departemen ?? 'Belum diatur' }}" disabled>
-</div>
+                    <div class="col-md-6">
+                        <label for="departemen" class="form-label fw-semibold">Departemen</label>
+                        <input type="text" class="form-control" id="departemen"
+                            value="{{ $user->departemen->nama_departemen ?? 'Belum diatur' }}" disabled>
+                    </div>
 
 
                     <!-- Jenis Cuti -->
                     <div class="col-md-6">
                         <label for="jenis_cuti" class="form-label fw-semibold">Jenis Cuti</label>
                         <select class="form-control" id="jenis_cuti" name="jenis_cuti" required>
-    <option value="">Pilih Jenis Cuti</option>
-    <option value="tahunan">Cuti Tahunan</option>
-    <option value="sakit">Cuti Sakit</option>
-    <option value="besar">Cuti Besar</option>
-    <option value="tanpa bayar">Izin Tanpa Bayar</option>
-</select>
+                            <option value="">Pilih Jenis Cuti</option>
+                            <option value="tahunan">Cuti Tahunan</option>
+                            <option value="sakit">Cuti Sakit</option>
+                            <option value="besar">Cuti Besar</option>
+                            <option value="tanpa bayar">Izin Tanpa Bayar</option>
+                        </select>
 
 
                     </div>

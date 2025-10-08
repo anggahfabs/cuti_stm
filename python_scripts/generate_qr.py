@@ -19,7 +19,7 @@ os.makedirs(output_dir, exist_ok=True)
 # Baca excel (sheet pertama)
 df = pd.read_excel(excel_path, dtype=str).fillna('')
 
-# Pastikan kolom yang dibutuhkan ada
+# Pastikan kolom minimal ada
 required_cols = ["nik", "nama_lengkap", "nama_departemen", "nama_role"]
 for c in required_cols:
     if c not in df.columns:
@@ -33,20 +33,22 @@ for _, row in df.iterrows():
     nama = str(row["nama_lengkap"]).strip()
     nama_departemen = str(row["nama_departemen"]).strip()
     nama_role = str(row["nama_role"]).strip()
-    email = str(row.get("email","")).strip()
+    nama_jabatan = str(row.get("nama_jabatan", "")).strip()
+    tanggal_masuk = str(row.get("tanggal_masuk", "")).strip()
 
     payload = {
         "nik": nik,
         "nama_lengkap": nama,
         "nama_departemen": nama_departemen,
         "nama_role": nama_role,
-        "email": email
+        "nama_jabatan": nama_jabatan,
+        "tanggal_masuk": tanggal_masuk,
     }
 
     # QR content = JSON string
     qr_text = json.dumps(payload, ensure_ascii=False)
 
-    # generate QR (pilih ukuran sesuai kebutuhan)
+    # generate QR
     qr = qrcode.QRCode(
         version=2,
         error_correction=qrcode.constants.ERROR_CORRECT_M,
@@ -66,9 +68,10 @@ for _, row in df.iterrows():
         "nama_lengkap": nama,
         "nama_departemen": nama_departemen,
         "nama_role": nama_role,
-        "email": email,
+        "nama_jabatan": nama_jabatan,
+        "tanggal_masuk": tanggal_masuk,
         "qr_file": f"qr_code/{filename}"
     })
 
-# Print hasil JSON ke stdout (agar Laravel bisa baca)
+# Print hasil JSON ke stdout (dibaca Laravel)
 print(json.dumps(results, ensure_ascii=False))

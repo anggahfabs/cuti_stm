@@ -37,25 +37,47 @@ class User extends Authenticatable
     // 🔗 RELASI MODEL
     // ======================
 
-    // Relasi ke tabel role
+    // Role
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id', 'role_id');
     }
 
-    // Relasi ke tabel departemen
+    // Departemen
     public function departemen()
     {
         return $this->belongsTo(\App\Models\Departemen::class, 'departemen_id', 'departemen_id');
     }
 
-    // Relasi ke tabel jabatan
+    // Jabatan
     public function jabatan()
     {
         return $this->belongsTo(\App\Models\Jabatan::class, 'jabatan_id', 'jabatan_id');
     }
 
-    // Laravel butuh identifier unik (biasanya "email", tapi kita pakai "nik")
+    // ======================
+    // 👓 RELASI TAMBAHAN
+    // ======================
+
+    // Relasi ke tabel Kacamata
+    public function kacamata()
+    {
+        return $this->hasMany(\App\Models\Kacamata::class, 'user_id', 'user_id');
+    }
+
+    // Relasi ke tabel Cuti
+    public function cuti()
+    {
+        return $this->hasMany(\App\Models\Cuti::class, 'user_id', 'user_id');
+    }
+
+    // Relasi ke tabel Medical
+    public function medical()
+    {
+        return $this->hasMany(\App\Models\Medical::class, 'user_id', 'user_id');
+    }
+
+    // Laravel pakai NIK untuk login (bukan email)
     public function getAuthIdentifierName()
     {
         return 'nik';

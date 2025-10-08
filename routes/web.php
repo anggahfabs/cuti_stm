@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\QrLoginController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Staff\CutiController;
+use App\Http\Controllers\Staff\KacamataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +90,11 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::get('izin_meninggalkan', fn() => view('staff.izin_meninggalkan'))->name('staff.izin_meninggalkan');
         Route::get('izin_terlambat', fn() => view('staff.izin_terlambat'))->name('staff.izin_terlambat');
         Route::get('settings', fn() => view('staff.settings'))->name('staff.settings');
+
+        // KACAMATA
+     Route::get('kacamata', [KacamataController::class, 'index'])->name('staff.kacamata.index');
+    Route::post('kacamata', [KacamataController::class, 'store'])->name('staff.kacamata.store');
+
     });
 
 });
