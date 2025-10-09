@@ -55,9 +55,11 @@ class User extends Authenticatable
         return $this->belongsTo(\App\Models\Jabatan::class, 'jabatan_id', 'jabatan_id');
     }
 
-    // ======================
-    // 👓 RELASI TAMBAHAN
-    // ======================
+    // Relasi ke tabel Cuti
+    public function cuti()
+    {
+        return $this->hasMany(\App\Models\Cuti::class, 'user_id', 'user_id');
+    }
 
     // Relasi ke tabel Kacamata
     public function kacamata()
@@ -65,17 +67,19 @@ class User extends Authenticatable
         return $this->hasMany(\App\Models\Kacamata::class, 'user_id', 'user_id');
     }
 
-    // Relasi ke tabel Cuti
-    public function cuti()
+    // Relasi ke tabel Terlambat
+    public function terlambat()
     {
-        return $this->hasMany(\App\Models\Cuti::class, 'user_id', 'user_id');
+        return $this->hasMany(\App\Models\Terlambat::class, 'user_id', 'user_id');
     }
 
+
+
     // Relasi ke tabel Medical
-    public function medical()
-    {
-        return $this->hasMany(\App\Models\Medical::class, 'user_id', 'user_id');
-    }
+    // public function medical()
+    // {
+    //     return $this->hasMany(\App\Models\Medical::class, 'user_id', 'user_id');
+    // }
 
     // Laravel pakai NIK untuk login (bukan email)
     public function getAuthIdentifierName()

@@ -9,12 +9,15 @@ use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Staff\CutiController;
 use App\Http\Controllers\Staff\KacamataController;
+use App\Http\Controllers\Staff\TerlambatController;
+use App\Http\Controllers\Staff\MeninggalkanController;
 
 /*
 |--------------------------------------------------------------------------
 | Redirect Root ke Login
 |--------------------------------------------------------------------------
 */
+
 Route::get('/', fn() => redirect()->route('login'));
 
 /*
@@ -88,13 +91,20 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::get('ajukan_cuti', [CutiController::class, 'index'])->name('staff.ajukan_cuti');
         Route::post('ajukan_cuti', [CutiController::class, 'store'])->name('staff.cuti.store');
         Route::get('izin_meninggalkan', fn() => view('staff.izin_meninggalkan'))->name('staff.izin_meninggalkan');
+
         Route::get('izin_terlambat', fn() => view('staff.izin_terlambat'))->name('staff.izin_terlambat');
         Route::get('settings', fn() => view('staff.settings'))->name('staff.settings');
 
         // KACAMATA
-     Route::get('kacamata', [KacamataController::class, 'index'])->name('staff.kacamata.index');
-    Route::post('kacamata', [KacamataController::class, 'store'])->name('staff.kacamata.store');
+        Route::get('kacamata', [KacamataController::class, 'index'])->name('staff.kacamata.index');
+        Route::post('kacamata', [KacamataController::class, 'store'])->name('staff.kacamata.store');
 
+        // Izin terlambat
+    Route::get('izin_terlambat', [TerlambatController::class, 'index'])->name('staff.izin_terlambat');
+    Route::post('izin_terlambat', [TerlambatController::class, 'store'])->name('staff.izin_terlambat.store');
+
+    // meninggalkan
+    Route::get('izin_meninggalkan', [MeninggalkanController::class, 'index'])->name('staff.izin_meninggalkan');
+Route::post('izin_meninggalkan', [MeninggalkanController::class, 'store'])->name('staff.izin_meninggalkan.store');
     });
-
 });

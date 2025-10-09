@@ -33,11 +33,36 @@ class GenerateQrFromExcel extends Command
         }
 
         $out = $process->getOutput();
-        $rows = json_decode($out, true);
-        if (!$rows) {
-            $this->error("No output from python script or invalid JSON.");
-            return 1;
-        }
+       $out = $process->getOutput();
+$rows = json_decode($out, true);
+
+if (!$rows) {
+    $this->error("No output from python script or invalid JSON.");
+    return 1;
+}
+
+// Jika Python return object dengan key "data", ambil bagian itu aja
+if (isset($rows['data']) && is_array($rows['data'])) {
+    $rows = $rows['data'];
+}
+
+// Pastikan $rows tetap array setelah disesuaikan
+if (!is_array($rows)) {
+    $this->error("Invalid data format from Python script.");
+    return 1;
+}
+
+foreach ($rows as $r) {
+    $deptName = trim($r['nama_departemen']);
+    $roleName = trim($r['nama_role']);
+    $jabatanName = trim($r['nama_jabatan'] ?? '');
+    $nik = trim($r['nik']);
+    $tanggalMasukRaw = trim($r['tanggal_masuk'] ?? '');
+    $email = trim($r['email'] ?? '');
+    
+    // ... lanjut proses seperti sebelumnya
+}
+
 
         foreach ($rows as $r) {
             $deptName = trim($r['nama_departemen']);

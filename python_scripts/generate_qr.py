@@ -27,6 +27,7 @@ for c in required_cols:
         sys.exit(1)
 
 results = []
+payload_list = []  # untuk file JSON
 
 for _, row in df.iterrows():
     nik = str(row["nik"]).strip()
@@ -44,6 +45,9 @@ for _, row in df.iterrows():
         "nama_jabatan": nama_jabatan,
         "tanggal_masuk": tanggal_masuk,
     }
+
+    # Simpan ke list JSON file
+    payload_list.append(payload)
 
     # QR content = JSON string
     qr_text = json.dumps(payload, ensure_ascii=False)
@@ -73,5 +77,14 @@ for _, row in df.iterrows():
         "qr_file": f"qr_code/{filename}"
     })
 
-# Print hasil JSON ke stdout (dibaca Laravel)
-print(json.dumps(results, ensure_ascii=False))
+# === Simpan semua string JSON ke file ===
+json_output_path = os.path.join(output_dir, "qr_data.json")
+with open(json_output_path, "w", encoding="utf-8") as f:
+    json.dump(payload_list, f, ensure_ascii=False, indent=4)
+
+print(json.dumps({
+    "message": "QR generated and JSON file created successfully",
+    "total": len(results),
+    "json_file": json_output_path,
+    "data": results
+}, ensure_ascii=False))

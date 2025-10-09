@@ -1,0 +1,1250 @@
+[
+    {
+        "nik": "0340041",
+        "nama_lengkap": "V. HERDI SUNDJAJA. H",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "DIREKTUR",
+        "tanggal_masuk": "2003/08/01"
+    },
+    {
+        "nik": "0440023",
+        "nama_lengkap": "TJHIN JOHAN BUDIHARTANTO",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "FINANCE CONTROLING",
+        "tanggal_masuk": "2004/01/02"
+    },
+    {
+        "nik": "1540759",
+        "nama_lengkap": "ELSYE",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Kadep",
+        "nama_jabatan": "MANAGER",
+        "tanggal_masuk": "2015/03/01"
+    },
+    {
+        "nik": "2040846",
+        "nama_lengkap": "ALVIN SUGANDA",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Kadep",
+        "nama_jabatan": "ASS. MANAGER",
+        "tanggal_masuk": "2020/12/07"
+    },
+    {
+        "nik": "0640295",
+        "nama_lengkap": "BRIAN JONATHAN",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2006/10/02"
+    },
+    {
+        "nik": "1640779",
+        "nama_lengkap": "CHATARINA WIGATI",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR   (INTERNAL AUDIT)",
+        "tanggal_masuk": "2016/04/01"
+    },
+    {
+        "nik": "1640785",
+        "nama_lengkap": "DANISH ARTHA SUBRATA",
+        "nama_departemen": "ADMINISTRASI & GENERAL",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2016/08/15"
+    },
+    {
+        "nik": "2240850",
+        "nama_lengkap": "DAVIDTO DOMINGGUS MARCELLINO S",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2022/09/26"
+    },
+    {
+        "nik": "1440738",
+        "nama_lengkap": "DHYAN SULISTYONO",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "INTERNAL CONTROLS (AUDIT) MANAGER",
+        "tanggal_masuk": "2014/09/01"
+    },
+    {
+        "nik": "2340860",
+        "nama_lengkap": "ERRIN TARUNA",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2023/10/11"
+    },
+    {
+        "nik": "2540871",
+        "nama_lengkap": "HIRVAN WIJAYA ALFINJO",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2025/03/10"
+    },
+    {
+        "nik": "1740799",
+        "nama_lengkap": "LUKI",
+        "nama_departemen": "ADMINISTRASI & GENERAL",
+        "nama_role": "Staff",
+        "nama_jabatan": "DESAIN GRAFIS / IT",
+        "tanggal_masuk": "2017/05/06"
+    },
+    {
+        "nik": "1840806",
+        "nama_lengkap": "MARGARETHA MARIA LOY",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2018/03/01"
+    },
+    {
+        "nik": "9340033",
+        "nama_lengkap": "MAS OVA SUSSANTY",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "SEKRETARIS",
+        "tanggal_masuk": "1993/06/02"
+    },
+    {
+        "nik": "1240643",
+        "nama_lengkap": "MUHAMMAD PAMUNGKAS",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF AP",
+        "tanggal_masuk": "2012/04/30"
+    },
+    {
+        "nik": "1940823",
+        "nama_lengkap": "SAMUEL ALDI",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2019/07/08"
+    },
+    {
+        "nik": "1940824",
+        "nama_lengkap": "VENICIA NAFTALI",
+        "nama_departemen": "ACC & FIN",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2019/07/29"
+    },
+    {
+        "nik": "9140018",
+        "nama_lengkap": "ANDI SUMARTA",
+        "nama_departemen": "PURCHASING",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "1991/04/01"
+    },
+    {
+        "nik": "2440866",
+        "nama_lengkap": "ABU YAZID AL BUSTHOMI",
+        "nama_departemen": "PURCHASING",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2024/11/01"
+    },
+    {
+        "nik": "1440744",
+        "nama_lengkap": "FRANSISCA IRAWATY",
+        "nama_departemen": "PURCHASING",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2014/12/01"
+    },
+    {
+        "nik": "1540763",
+        "nama_lengkap": "FELYA GABI MEGAN D.P",
+        "nama_departemen": "PURCHASING",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2015/06/01"
+    },
+    {
+        "nik": "9240128",
+        "nama_lengkap": "QOMARI",
+        "nama_departemen": "PURCHASING",
+        "nama_role": "Staff",
+        "nama_jabatan": "STOREKEEPER",
+        "tanggal_masuk": "1992/06/13"
+    },
+    {
+        "nik": "0440031",
+        "nama_lengkap": "IWAN GUNAWAN",
+        "nama_departemen": "BMO",
+        "nama_role": "BMO",
+        "nama_jabatan": "BUILDING MANAGER",
+        "tanggal_masuk": ""
+    },
+    {
+        "nik": "2440862",
+        "nama_lengkap": "ADE ARYANI DARMAWAN",
+        "nama_departemen": "BMO",
+        "nama_role": "BMO",
+        "nama_jabatan": "SEKRETARIS",
+        "tanggal_masuk": "2024/04/22"
+    },
+    {
+        "nik": "9540032",
+        "nama_lengkap": "DADANG SANUSI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "SENIOR SUPERVISOR",
+        "tanggal_masuk": "1995/11/01"
+    },
+    {
+        "nik": "2340858",
+        "nama_lengkap": "HERLINA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Kadep",
+        "nama_jabatan": "MANAGER",
+        "tanggal_masuk": "2023/08/01"
+    },
+    {
+        "nik": "1040503",
+        "nama_lengkap": "MUSAROFAH",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "RECEPTIONIST",
+        "tanggal_masuk": "2010/10/01"
+    },
+    {
+        "nik": "9140077",
+        "nama_lengkap": "NURLAELA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "1992/01/01"
+    },
+    {
+        "nik": "1640772",
+        "nama_lengkap": "ADE THOVANI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2016/01/04"
+    },
+    {
+        "nik": "1640793",
+        "nama_lengkap": "AGUS CHOMSAH NUR ROKHMAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GARDENING",
+        "tanggal_masuk": "2018/11/01"
+    },
+    {
+        "nik": "0440211",
+        "nama_lengkap": "AGUS SETIAWAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GONDOLLA",
+        "tanggal_masuk": "2004/08/02"
+    },
+    {
+        "nik": "9540059",
+        "nama_lengkap": "AGUS SUPRIYADI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "1995/11/15"
+    },
+    {
+        "nik": "2340854",
+        "nama_lengkap": "BAYU HERMAWAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2023/02/27"
+    },
+    {
+        "nik": "1940832",
+        "nama_lengkap": "CANDRA IRAWAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GONDOLLA",
+        "tanggal_masuk": "2019/10/01"
+    },
+    {
+        "nik": "1240619",
+        "nama_lengkap": "CHAMID MASRURI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GONDOLLA",
+        "tanggal_masuk": "2012/01/02"
+    },
+    {
+        "nik": "1340713",
+        "nama_lengkap": "CHRISTOVORUS FERNANDEZ",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2013/05/01"
+    },
+    {
+        "nik": "1940833",
+        "nama_lengkap": "DANI DWI LAKSONO",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2019/10/01"
+    },
+    {
+        "nik": "1740796",
+        "nama_lengkap": "DEDI SUDRAJAT",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2017/02/01"
+    },
+    {
+        "nik": "1740802",
+        "nama_lengkap": "DEDY WAHYUDIN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GARDENING",
+        "tanggal_masuk": "2017/12/06"
+    },
+    {
+        "nik": "1940820",
+        "nama_lengkap": "ELMA AMELIA LUCTNIAWAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2019/04/16"
+    },
+    {
+        "nik": "1840813",
+        "nama_lengkap": "ERIK ANDRIAN SAPUTRA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2018/11/19"
+    },
+    {
+        "nik": "1340716",
+        "nama_lengkap": "EUIS ATIKA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2013/09/01"
+    },
+    {
+        "nik": "1740801",
+        "nama_lengkap": "FAHRUDI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2017/12/06"
+    },
+    {
+        "nik": "1740797",
+        "nama_lengkap": "FAHRULLAH",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GARDENING",
+        "tanggal_masuk": "2017/02/01"
+    },
+    {
+        "nik": "1140554",
+        "nama_lengkap": "GANESA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2012/04/02"
+    },
+    {
+        "nik": "1640788",
+        "nama_lengkap": "INDRA SAPUTRA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2016/10/17"
+    },
+    {
+        "nik": "1340718",
+        "nama_lengkap": "JAENUDIN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GONDOLLA",
+        "tanggal_masuk": "2013/10/01"
+    },
+    {
+        "nik": "1940821",
+        "nama_lengkap": "JIHAN NATASHA MEILANI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2019/04/16"
+    },
+    {
+        "nik": "1840803",
+        "nama_lengkap": "LISSIU HUTASOIT",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2018/01/08"
+    },
+    {
+        "nik": "1340710",
+        "nama_lengkap": "LIYA SUFRIATNA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2013/03/05"
+    },
+    {
+        "nik": "1340720",
+        "nama_lengkap": "MUHAMAT ARPIAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2013/10/01"
+    },
+    {
+        "nik": "1040481",
+        "nama_lengkap": "NANANG PRAMUDIAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2012/01/02"
+    },
+    {
+        "nik": "1340708",
+        "nama_lengkap": "NURUL HASANAH",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2013/02/01"
+    },
+    {
+        "nik": "1340715",
+        "nama_lengkap": "PETRUS YOPPY CHRISTIAN",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2013/09/02"
+    },
+    {
+        "nik": "2540867",
+        "nama_lengkap": "RIFAL ALHABSYI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2025/01/13"
+    },
+    {
+        "nik": "1440730",
+        "nama_lengkap": "ROSMALIA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANING",
+        "tanggal_masuk": "2014/03/03"
+    },
+    {
+        "nik": "1440740",
+        "nama_lengkap": "SAEPUL BASRI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "GARDENING",
+        "tanggal_masuk": "2014/09/01"
+    },
+    {
+        "nik": "1440729",
+        "nama_lengkap": "SINTIA DANIA PUTRI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2014/03/03"
+    },
+    {
+        "nik": "1740798",
+        "nama_lengkap": "TEGUH FADLI ALIMI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2017/08/14"
+    },
+    {
+        "nik": "1340721",
+        "nama_lengkap": "TIHAMAH",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2013/10/01"
+    },
+    {
+        "nik": "1640774",
+        "nama_lengkap": "UCEP",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2016/01/04"
+    },
+    {
+        "nik": "1540760",
+        "nama_lengkap": "WAHYUNI",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Staff",
+        "nama_jabatan": "CLEANER",
+        "tanggal_masuk": "2015/03/01"
+    },
+    {
+        "nik": "1640781",
+        "nama_lengkap": "ARROHMAN SANJAYA",
+        "nama_departemen": "F&B",
+        "nama_role": "Staff",
+        "nama_jabatan": "WAITERS",
+        "tanggal_masuk": "2016/05/02"
+    },
+    {
+        "nik": "1940836",
+        "nama_lengkap": "DANI HARSANTO",
+        "nama_departemen": "F&B",
+        "nama_role": "Staff",
+        "nama_jabatan": "WAITERS",
+        "tanggal_masuk": "2019/11/01"
+    },
+    {
+        "nik": "9040153",
+        "nama_lengkap": "MARDIYONO",
+        "nama_departemen": "F&B",
+        "nama_role": "Staff",
+        "nama_jabatan": "WAITERS",
+        "tanggal_masuk": "1990/12/17"
+    },
+    {
+        "nik": "0140031",
+        "nama_lengkap": "WIYONO",
+        "nama_departemen": "F&B",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF",
+        "tanggal_masuk": "2001/04/16"
+    },
+    {
+        "nik": "1340714",
+        "nama_lengkap": "YAYAN IIS RISDIYANTO",
+        "nama_departemen": "F&B",
+        "nama_role": "Staff",
+        "nama_jabatan": "WAITERS",
+        "tanggal_masuk": "2013/06/03"
+    },
+    {
+        "nik": "1940826",
+        "nama_lengkap": "AGUS SETIAWAN",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "OFFICE BOY",
+        "tanggal_masuk": "2019/08/19"
+    },
+    {
+        "nik": "1640778",
+        "nama_lengkap": "ANTHONY WIJAYA",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "GA STAFF",
+        "tanggal_masuk": "2016/04/01"
+    },
+    {
+        "nik": "9640118",
+        "nama_lengkap": "BUDI SANTOSO KOERNIA",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "SAFETY OFFICER SUPERVISOR",
+        "tanggal_masuk": "1996/03/05"
+    },
+    {
+        "nik": "1140601",
+        "nama_lengkap": "DEDEN SAPUTRA",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "MESSENGER",
+        "tanggal_masuk": "2011/12/01"
+    },
+    {
+        "nik": "2040837",
+        "nama_lengkap": "DENI",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR LEGAL",
+        "tanggal_masuk": "2020/02/03"
+    },
+    {
+        "nik": "1140546",
+        "nama_lengkap": "FITRI",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Kadep",
+        "nama_jabatan": "MANAGER",
+        "tanggal_masuk": "2011/01/12"
+    },
+    {
+        "nik": "0540431",
+        "nama_lengkap": "MARSAN",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "DRIVER",
+        "tanggal_masuk": "2005/06/01"
+    },
+    {
+        "nik": "1840814",
+        "nama_lengkap": "PYAS ANGGIT DITIRA",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "K3 STAFF",
+        "tanggal_masuk": "2018/12/17"
+    },
+    {
+        "nik": "1640787",
+        "nama_lengkap": "REZA DEWANTORO",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "HR STAFF",
+        "tanggal_masuk": "2016/10/03"
+    },
+    {
+        "nik": "2240848",
+        "nama_lengkap": "SUMANTRI ARIFIN",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "OFFICE BOY",
+        "tanggal_masuk": "2022/07/27"
+    },
+    {
+        "nik": "0640457",
+        "nama_lengkap": "TARSAN",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Staff",
+        "nama_jabatan": "DRIVER",
+        "tanggal_masuk": "2006/10/09"
+    },
+    {
+        "nik": "2540873",
+        "nama_lengkap": "YOSELIN PARDOSI",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Admin",
+        "nama_jabatan": "HR STAFF",
+        "tanggal_masuk": "2025/08/11"
+    },
+    {
+        "nik": "1540750",
+        "nama_lengkap": "ABDUL MALIK",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "DANRU\nREGU A",
+        "tanggal_masuk": "2015/01/26"
+    },
+    {
+        "nik": "2040842",
+        "nama_lengkap": "ADE SANDI MAULANA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2020/12/01"
+    },
+    {
+        "nik": "9940022",
+        "nama_lengkap": "AGUNG NUGROHO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "DANRU\nREGU C",
+        "tanggal_masuk": "1999/10/01"
+    },
+    {
+        "nik": "0040045",
+        "nama_lengkap": "AGUS DJULI DJUNAEDI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "OPERATOR SAFETY",
+        "tanggal_masuk": "2000/09/19"
+    },
+    {
+        "nik": "9640088",
+        "nama_lengkap": "AGUS EDI RUKANDI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "ASS. CHIEF",
+        "tanggal_masuk": "1996/02/26"
+    },
+    {
+        "nik": "9140051",
+        "nama_lengkap": "AHMAD HUSAINI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "1991/05/20"
+    },
+    {
+        "nik": "1840811",
+        "nama_lengkap": "AHMAD ZAINI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2018/10/01"
+    },
+    {
+        "nik": "0040096",
+        "nama_lengkap": "ALEXANDER AYAWAILA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2000/11/03"
+    },
+    {
+        "nik": "2040843",
+        "nama_lengkap": "ANDI SANDRA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2020/12/01"
+    },
+    {
+        "nik": "2040844",
+        "nama_lengkap": "ANDRIS TRI YAHYA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2020/12/01"
+    },
+    {
+        "nik": "1640791",
+        "nama_lengkap": "ASEP HERYADI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2016/11/01"
+    },
+    {
+        "nik": "9640011",
+        "nama_lengkap": "DADANG SUPRIA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "1996/02/26"
+    },
+    {
+        "nik": "1440732",
+        "nama_lengkap": "DWI HARTONO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "BMO",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2014/04/01"
+    },
+    {
+        "nik": "1440731",
+        "nama_lengkap": "EDDY SUTAMTO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2014/04/01"
+    },
+    {
+        "nik": "1240651",
+        "nama_lengkap": "EKA ARIES YANDHA LESMANA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2012/05/01"
+    },
+    {
+        "nik": "1640789",
+        "nama_lengkap": "EKO JULYANTO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2016/11/01"
+    },
+    {
+        "nik": "1640792",
+        "nama_lengkap": "ENDA JUANDA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2016/11/01"
+    },
+    {
+        "nik": "2540871",
+        "nama_lengkap": "FISAL",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2025/01/28"
+    },
+    {
+        "nik": "2340859",
+        "nama_lengkap": "GUNTUR PRABOWO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2023/10/05"
+    },
+    {
+        "nik": "2440864",
+        "nama_lengkap": "HANDOKO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2024/08/26"
+    },
+    {
+        "nik": "1240635",
+        "nama_lengkap": "HARUN SUHADA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2012/05/01"
+    },
+    {
+        "nik": "1940828",
+        "nama_lengkap": "IMAM TOHARI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2019/08/19"
+    },
+    {
+        "nik": "1940835",
+        "nama_lengkap": "ISEP WAHYUDI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2019/10/01"
+    },
+    {
+        "nik": "1440725",
+        "nama_lengkap": "IWAN INDIRWAN",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2014/01/01"
+    },
+    {
+        "nik": "1140562",
+        "nama_lengkap": "JANIM JAYADI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2011/08/01"
+    },
+    {
+        "nik": "9540016",
+        "nama_lengkap": "JOKO WALUYO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "1995/07/01"
+    },
+    {
+        "nik": "1540746",
+        "nama_lengkap": "LUKMAN HAKIM",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2015/01/26"
+    },
+    {
+        "nik": "2040845",
+        "nama_lengkap": "M. RAHMAT DIANTO S",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2020/12/01"
+    },
+    {
+        "nik": "9240071",
+        "nama_lengkap": "MAMAT RAHMAT",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "ASS. CHIEF",
+        "tanggal_masuk": "1992/02/01"
+    },
+    {
+        "nik": "1940831",
+        "nama_lengkap": "MOHAMAD IKBAL FAUZI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "2019/09/23"
+    },
+    {
+        "nik": "1940827",
+        "nama_lengkap": "MUHAMAD NUR HUDA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2019/08/19"
+    },
+    {
+        "nik": "1140589",
+        "nama_lengkap": "MUHAMAD ISMAIL",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2011/08/01"
+    },
+    {
+        "nik": "9240063",
+        "nama_lengkap": "NANA SUYATNA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "1992/02/01"
+    },
+    {
+        "nik": "1940829",
+        "nama_lengkap": "NUROKHMAN JAYA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2019/08/19"
+    },
+    {
+        "nik": "9640071",
+        "nama_lengkap": "NURUL ABDI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "DANRU\nREGU B",
+        "tanggal_masuk": "1996/02/26"
+    },
+    {
+        "nik": "1840812",
+        "nama_lengkap": "NURYADI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2018/10/01"
+    },
+    {
+        "nik": "2540868",
+        "nama_lengkap": "RANDI ADINATA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2025/01/20"
+    },
+    {
+        "nik": "0940497",
+        "nama_lengkap": "REZA FADRIYAN",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "DANRU\nREGU D",
+        "tanggal_masuk": "2009/02/01"
+    },
+    {
+        "nik": "2240849",
+        "nama_lengkap": "ROBBY SETIAWAN",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF ADMIN",
+        "tanggal_masuk": "2022/07/04"
+    },
+    {
+        "nik": "1340711",
+        "nama_lengkap": "SUKMARA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2013/04/01"
+    },
+    {
+        "nik": "0940501",
+        "nama_lengkap": "SUPRIYADI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2009/02/01"
+    },
+    {
+        "nik": "1240686",
+        "nama_lengkap": "SURYA WINATA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Kadep",
+        "nama_jabatan": "MANAGER",
+        "tanggal_masuk": "2012/10/15"
+    },
+    {
+        "nik": "1940834",
+        "nama_lengkap": "SUTANTO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2019/10/01"
+    },
+    {
+        "nik": "9940031",
+        "nama_lengkap": "SUTEDI",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU C",
+        "tanggal_masuk": "1999/10/01"
+    },
+    {
+        "nik": "1640775",
+        "nama_lengkap": "SYAIFULLOH",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2016/02/15"
+    },
+    {
+        "nik": "1640782",
+        "nama_lengkap": "TEGUH FIRMANSAH",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU A",
+        "tanggal_masuk": "2016/05/02"
+    },
+    {
+        "nik": "1540748",
+        "nama_lengkap": "TEGUH YULIANTO",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2015/01/26"
+    },
+    {
+        "nik": "2340855",
+        "nama_lengkap": "TONI GUNAWAN",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU B",
+        "tanggal_masuk": "2023/05/15"
+    },
+    {
+        "nik": "1540747",
+        "nama_lengkap": "YEREMIA YAKOB TATIPATA",
+        "nama_departemen": "SECURITY",
+        "nama_role": "Staff",
+        "nama_jabatan": "REGU D",
+        "tanggal_masuk": "2015/01/26"
+    },
+    {
+        "nik": "1440733",
+        "nama_lengkap": "ANTHONY",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Kadep",
+        "nama_jabatan": "CHIEF TEKNIK",
+        "tanggal_masuk": "2014/04/01"
+    },
+    {
+        "nik": "2440863",
+        "nama_lengkap": "AMEL RYAN MIFTAH RAMADHAN",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2024/08/19"
+    },
+    {
+        "nik": "1640784",
+        "nama_lengkap": "BAYU PRAWIJAYA",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2016/06/01"
+    },
+    {
+        "nik": "1540770",
+        "nama_lengkap": "EDI SUJARWO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2015/09/01"
+    },
+    {
+        "nik": "0740075",
+        "nama_lengkap": "ERLAN ZAELANI",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2007/11/01"
+    },
+    {
+        "nik": "2040839",
+        "nama_lengkap": "FAJAR RUSANDI",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2020/07/16"
+    },
+    {
+        "nik": "1340717",
+        "nama_lengkap": "HASTHO BROTO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2013/10/01"
+    },
+    {
+        "nik": "2540869",
+        "nama_lengkap": "ISKANDAR MARJUNI",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2025/01/23"
+    },
+    {
+        "nik": "2340852",
+        "nama_lengkap": "M. DIMAS AZZAHABI ADHA",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2023/02/06"
+    },
+    {
+        "nik": "2040840",
+        "nama_lengkap": "MUHAMMAD ALI AULIA",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2020/08/03"
+    },
+    {
+        "nik": "1840810",
+        "nama_lengkap": "MUHAMAD NURHADI",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2018/09/17"
+    },
+    {
+        "nik": "2340853",
+        "nama_lengkap": "NANANG JAMALUDIN",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2023/02/06"
+    },
+    {
+        "nik": "2040847",
+        "nama_lengkap": "NURROHMAN",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2021/01/04"
+    },
+    {
+        "nik": "9640134",
+        "nama_lengkap": "OMAN SUGANDA",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "1996/06/06"
+    },
+    {
+        "nik": "1940815",
+        "nama_lengkap": "PUSPO WARDOYO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2019/01/03"
+    },
+    {
+        "nik": "0740083",
+        "nama_lengkap": "RAHMAD IWAN PRASETYO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2007/11/01"
+    },
+    {
+        "nik": "2340851",
+        "nama_lengkap": "RICKY HERMAWAN",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2023/01/09"
+    },
+    {
+        "nik": "2040841",
+        "nama_lengkap": "ROKI SETIAWAN",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2020/08/03"
+    },
+    {
+        "nik": "1140571",
+        "nama_lengkap": "SEPTO TRIHANDOKO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2011/09/15"
+    },
+    {
+        "nik": "1540771",
+        "nama_lengkap": "SUBAKTIO PURWANTO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "SENIOR SUPERVISOR",
+        "tanggal_masuk": "2015/09/04"
+    },
+    {
+        "nik": "1240627",
+        "nama_lengkap": "SUDARYANTO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2012/05/01"
+    },
+    {
+        "nik": "1940822",
+        "nama_lengkap": "SUGITO",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2019/06/17"
+    },
+    {
+        "nik": "2440865",
+        "nama_lengkap": "USEP SAEPUL ULUM",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "TEKNISI",
+        "tanggal_masuk": "2024/09/01"
+    },
+    {
+        "nik": "2340861",
+        "nama_lengkap": "WAHYUDI",
+        "nama_departemen": "TEKNIK",
+        "nama_role": "Staff",
+        "nama_jabatan": "STAFF ADMIN",
+        "tanggal_masuk": "2023/11/01"
+    },
+    {
+        "nik": "0440058",
+        "nama_lengkap": "MARTINUS N.",
+        "nama_departemen": "TEAM KHUSUS",
+        "nama_role": "Kadep",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2011/09/15"
+    },
+    {
+        "nik": "0540236",
+        "nama_lengkap": "ALEX SARDIOKO",
+        "nama_departemen": "TEAM KHUSUS",
+        "nama_role": "Kadep",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2011/09/15"
+    },
+    {
+        "nik": "2540874",
+        "nama_lengkap": "YURIZKA ENDRA",
+        "nama_departemen": "BRD & HKG",
+        "nama_role": "Kadep",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2011/09/15"
+    },
+    {
+        "nik": "0000001",
+        "nama_lengkap": "Superadmin",
+        "nama_departemen": "HR & GA",
+        "nama_role": "Superadmin",
+        "nama_jabatan": "SUPERVISOR",
+        "tanggal_masuk": "2011/09/15"
+    }
+]
