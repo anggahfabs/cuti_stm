@@ -12,21 +12,41 @@
         <strong>Catatan:</strong> Pengajuan izin hanya dapat dilakukan di tanggal yang sama dengan izin diberikan (tidak bisa sebelum atau sesudah hari ini).
       </div>
 
-      {{-- ALERT SUCCESS --}}
-      @if(session('success'))
-      <div class="alert alert-success">{{ session('success') }}</div>
-      @endif
+            {{-- Toast Notifikasi --}}
+            @if(session('success'))
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil!',
+                            text: '{{ session('success') }}',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                        });
+                    });
+                </script>
+            @endif
 
       {{-- ALERT ERROR --}}
-      @if($errors->any())
-      <div class="alert alert-danger">
-        <ul class="mb-0">
-          @foreach($errors->all() as $error)
-          <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-      @endif
+            @if ($errors->any())
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal!',
+                            html: '{!! implode("<br>", $errors->all()) !!}',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 4000,
+                            timerProgressBar: true,
+                        });
+                    });
+                </script>
+            @endif
 
       <form action="{{ route('staff.izin_meninggalkan.store') }}" method="POST">
         @csrf

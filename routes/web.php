@@ -11,6 +11,8 @@ use App\Http\Controllers\Staff\CutiController;
 use App\Http\Controllers\Staff\KacamataController;
 use App\Http\Controllers\Staff\TerlambatController;
 use App\Http\Controllers\Staff\MeninggalkanController;
+use App\Http\Controllers\Staff\MedicalController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -100,11 +102,15 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::post('kacamata', [KacamataController::class, 'store'])->name('staff.kacamata.store');
 
         // Izin terlambat
-    Route::get('izin_terlambat', [TerlambatController::class, 'index'])->name('staff.izin_terlambat');
-    Route::post('izin_terlambat', [TerlambatController::class, 'store'])->name('staff.izin_terlambat.store');
+        Route::get('izin_terlambat', [TerlambatController::class, 'index'])->name('staff.izin_terlambat');
+        Route::post('izin_terlambat', [TerlambatController::class, 'store'])->name('staff.izin_terlambat.store');
 
-    // meninggalkan
-    Route::get('izin_meninggalkan', [MeninggalkanController::class, 'index'])->name('staff.izin_meninggalkan');
-Route::post('izin_meninggalkan', [MeninggalkanController::class, 'store'])->name('staff.izin_meninggalkan.store');
+        // meninggalkan
+        Route::get('izin_meninggalkan', [MeninggalkanController::class, 'index'])->name('staff.izin_meninggalkan');
+        Route::post('izin_meninggalkan', [MeninggalkanController::class, 'store'])->name('staff.izin_meninggalkan.store');
+
+        // medical 
+       Route::get('medical', [MedicalController::class, 'index'])->name('staff.medical.index');
+Route::post('medical', [MedicalController::class, 'store'])->name('staff.medical.store');
     });
 });

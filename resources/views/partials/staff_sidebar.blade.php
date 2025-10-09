@@ -46,7 +46,7 @@
                     </a>
                     <div class="collapse" id="tunjanganMenu">
                         <ul class="nav nav-collapse">
-                            <li><a href="#"><span class="sub-item" style="color: #000;">Medical</span></a></li>
+                            <li><a href="{{ route('staff.medical.index') }}"><span class="sub-item" style="color: #000;">Medical</span></a></li>
                             <li><a href="{{ route('staff.kacamata.index') }}"><span class="sub-item" style="color: #000;">Kacamata</span></a></li>
                         </ul>
                     </div>

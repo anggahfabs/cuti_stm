@@ -10,20 +10,40 @@
         <div class="card-body">
             <h3 class="mb-4 fw-semibold">Ajukan Cuti</h3>
 
-            {{-- ALERT SUCCESS --}}
+            {{-- Toast Notifikasi --}}
             @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil!',
+                            text: '{{ session('success') }}',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                        });
+                    });
+                </script>
             @endif
 
             {{-- ALERT ERROR --}}
-            @if($errors->any())
-            <div class="alert alert-danger">
-                <ul class="mb-0">
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            @if ($errors->any())
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal!',
+                            html: '{!! implode("<br>", $errors->all()) !!}',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 4000,
+                            timerProgressBar: true,
+                        });
+                    });
+                </script>
             @endif
 
             {{-- FORM AJUKAN CUTI --}}
