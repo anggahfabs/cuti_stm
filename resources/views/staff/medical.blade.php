@@ -16,7 +16,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Berhasil!',
-                text: @json(session('success')),
+                text: "{{ addslashes(session('success')) }}",
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
@@ -26,6 +26,7 @@
         });
     </script>
 @endif
+
 
 
             {{-- Notifikasi Error --}}

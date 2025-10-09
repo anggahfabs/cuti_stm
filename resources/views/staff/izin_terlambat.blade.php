@@ -8,23 +8,24 @@
     <div class="card-body">
       <h3 class="mb-4 fw-semibold">Form Pengajuan Terlambat</h3>
 
-            {{-- Toast Notifikasi --}}
-            @if(session('success'))
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Berhasil!',
-                            text: '{{ session('success') }}',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true,
-                        });
-                    });
-                </script>
-            @endif
+{{-- Notifikasi Sukses --}}
+@if(session('success'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: "{{ addslashes(session('success')) }}",
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+            });
+        });
+    </script>
+@endif
+
 
       {{-- ALERT ERROR --}}
             @if ($errors->any())

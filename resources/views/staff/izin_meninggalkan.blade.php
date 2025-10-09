@@ -12,23 +12,24 @@
         <strong>Catatan:</strong> Pengajuan izin hanya dapat dilakukan di tanggal yang sama dengan izin diberikan (tidak bisa sebelum atau sesudah hari ini).
       </div>
 
-            {{-- Toast Notifikasi --}}
-            @if(session('success'))
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Berhasil!',
-                            text: '{{ session('success') }}',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true,
-                        });
-                    });
-                </script>
-            @endif
+{{-- Notifikasi Sukses --}}
+@if(session('success'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: "{{ addslashes(session('success')) }}",
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+            });
+        });
+    </script>
+@endif
+
 
       {{-- ALERT ERROR --}}
             @if ($errors->any())
