@@ -57,7 +57,7 @@
     </div>
     <form action="{{ route('superadmin.karyawan') }}" method="GET" class="mb-3 d-flex gap-2">
       {{-- Filter Departemen --}}
-      <select class="form-control w-auto" name="departemen" onchange="this.form.submit()">
+         {{--<select class="form-control w-auto" name="departemen" onchange="this.form.submit()">
         <option value="">-- Semua Departemen --</option>
         @foreach ($departemen as $dept)
         <option value="{{ $dept->departemen_id }}" {{ request('departemen') == $dept->departemen_id ? 'selected' : '' }}>
@@ -201,8 +201,175 @@
   </div>
   @endif
 
-  {{-- ... (Modal Tambah & Edit tetap seperti sebelumnya) --}}
-  {{-- Pastikan modal tambah dan edit di bawah ini tetap ada --}}
+  {{-- Modal Tambah Karyawan --}}
+  <div class="modal fade" id="addKaryawanModal" tabindex="-1" role="dialog" aria-labelledby="addKaryawanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="addKaryawanModalLabel">Tambah Karyawan</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ route('superadmin.karyawan.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+              <label for="nik">NIK</label>
+              <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK" required>
+            </div>
+            <div class="form-group">
+              <label for="nama_lengkap">Nama Lengkap</label>
+              <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required>
+            </div>
+            <div class="form-group">
+              <label for="departemen_id">Departemen</label>
+              <select class="form-control" id="departemen_id" name="departemen_id" required>
+                <option value="">-- Pilih Departemen --</option>
+                @foreach($departemen as $d)
+                <option value="{{ $d->departemen_id }}">{{ $d->nama_departemen }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="jabatan_id">Jabatan</label>
+              <select class="form-control" id="jabatan_id" name="jabatan_id" required>
+                <option value="">-- Pilih Jabatan --</option>
+                @foreach($jabatan as $j)
+                <option value="{{ $j->jabatan_id }}">{{ $j->nama_jabatan }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="role_id">Role</label>
+              <select class="form-control" id="role_id" name="role_id" required>
+                <option value="">-- Pilih Role --</option>
+                @foreach($role as $r)
+                <option value="{{ $r->role_id }}">{{ $r->nama_role }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
+            </div>
+            <div class="form-group">
+              <label for="no_hp">No HP</label>
+              <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Masukkan No HP">
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <textarea class="form-control" id="alamat" name="alamat" rows="2" placeholder="Masukkan Alamat"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="tanggal_masuk">Tanggal Masuk</label>
+              <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" required>
+            </div>
+            <div class="form-group">
+              <label for="status_karyawan">Status Karyawan</label>
+              <select class="form-control" id="status_karyawan" name="status_karyawan" required>
+                <option value="aktif">Aktif</option>
+                <option value="nonaktif">Nonaktif</option>
+              </select>
+            </div>
+            <div class="form-group text-right">
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  {{-- Modal Edit Karyawan --}}
+  @foreach($karyawan as $row)
+  <div class="modal fade" id="editKaryawanModal{{ $row->user_id }}" tabindex="-1" role="dialog" aria-labelledby="editKaryawanModalLabel{{ $row->user_id }}" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="editKaryawanModalLabel{{ $row->user_id }}">Edit Karyawan</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ route('superadmin.karyawan.update', $row->user_id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="form-group">
+              <label for="nik">NIK</label>
+              <input type="text" class="form-control" name="nik" value="{{ $row->nik }}" required>
+            </div>
+            <div class="form-group">
+              <label for="nama_lengkap">Nama Lengkap</label>
+              <input type="text" class="form-control" name="nama_lengkap" value="{{ $row->nama_lengkap }}" required>
+            </div>
+            <div class="form-group">
+              <label for="departemen_id">Departemen</label>
+              <select class="form-control" name="departemen_id" required>
+                @foreach($departemen as $d)
+                <option value="{{ $d->departemen_id }}" {{ $row->nama_departemen == $d->nama_departemen ? 'selected' : '' }}>
+                  {{ $d->nama_departemen }}
+                </option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="jabatan_id">Jabatan</label>
+              <select class="form-control" name="jabatan_id" required>
+                @foreach($jabatan as $j)
+                <option value="{{ $j->jabatan_id }}" {{ $row->nama_jabatan == $j->nama_jabatan ? 'selected' : '' }}>
+                  {{ $j->nama_jabatan }}
+                </option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="role_id">Role</label>
+              <select class="form-control" name="role_id" required>
+                @foreach($role as $r)
+                <option value="{{ $r->role_id }}" {{ $row->nama_role == $r->nama_role ? 'selected' : '' }}>
+                  {{ $r->nama_role }}
+                </option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" value="{{ $row->email }}" required>
+            </div>
+            <div class="form-group">
+              <label for="no_hp">No HP</label>
+              <input type="text" class="form-control" name="no_hp" value="{{ $row->no_hp }}">
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <textarea class="form-control" name="alamat">{{ $row->alamat }}</textarea>
+            </div>
+            <div class="form-group">
+              <label for="tanggal_masuk">Tanggal Masuk</label>
+              <input type="date" class="form-control" name="tanggal_masuk" value="{{ $row->tanggal_masuk }}" required>
+            </div>
+            <div class="form-group">
+              <label for="status_karyawan">Status Karyawan</label>
+              <select class="form-control" name="status_karyawan" required>
+                <option value="aktif" {{ $row->status_karyawan == 'aktif' ? 'selected' : '' }}>Aktif</option>
+                <option value="nonaktif" {{ $row->status_karyawan == 'nonaktif' ? 'selected' : '' }}>Nonaktif</option>
+              </select>
+            </div>
+            <div class="form-group text-right">
+              <button type="submit" class="btn btn-warning">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endforeach
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
