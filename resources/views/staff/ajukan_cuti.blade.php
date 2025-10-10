@@ -118,9 +118,14 @@
 
                     <!-- Pengganti -->
                     <div class="col-md-6">
-                        <label for="pengganti_id" class="form-label fw-semibold">ID Pengganti HARUS 1 DEPARTEMEN!</label>
-                        <input type="text" class="form-control" id="pengganti_id" name="pengganti_id" placeholder="Masukkan user_id pengganti">
-                    </div>
+    <label for="pengganti_id" class="form-label fw-semibold">Pengganti/Backup</label>
+    <select class="form-control" id="pengganti_id" name="pengganti_id" required>
+        <option value="">Pilih Pengganti</option>
+        @foreach ($penggantiList as $p)
+            <option value="{{ $p->user_id }}">{{ $p->nama_lengkap }}</option>
+        @endforeach
+    </select>
+</div>
                 </div>
 
                 <!-- Tombol -->
