@@ -14,4 +14,9 @@ class DashboardController extends Controller
 
         return view('superadmin.dashboard', compact('totalKaryawan'));
     }
+    public function adminDashboard()
+    {
+        $totalKaryawan = \App\Models\User::count();
+        return view('admin.dashboardadmin', compact('totalKaryawan'));
+    }
 }

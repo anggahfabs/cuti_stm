@@ -13,13 +13,11 @@ use App\Http\Controllers\Staff\TerlambatController;
 use App\Http\Controllers\Staff\MeninggalkanController;
 use App\Http\Controllers\Staff\MedicalController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Redirect Root ke Login
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', fn() => redirect()->route('login'));
 
 /*
@@ -42,7 +40,6 @@ Route::post('/logout', function () {
 // Login via QR Code
 Route::get('/login-qr', [QrLoginController::class, 'showLoginQr'])->name('login.qr');
 Route::post('/login-qr', [QrLoginController::class, 'loginWithQr'])->name('login.qr.post');
-
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +64,8 @@ Route::middleware([Authenticate::class])->group(function () {
 
     // -------------------- ADMIN --------------------
     Route::prefix('admin')->group(function () {
-        Route::get('dashboard', fn() => view('admin.dashboardadmin'))->name('admin.dashboardadmin');
+        // Dashboard admin ambil total karyawan via controller
+        Route::get('dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboardadmin');
 
         Route::get('karyawan', [KaryawanController::class, 'index'])->name('admin.karyawanadmin');
         Route::post('karyawan', [KaryawanController::class, 'store'])->name('admin.karyawanadmin.store');
@@ -110,7 +108,7 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::post('izin_meninggalkan', [MeninggalkanController::class, 'store'])->name('staff.izin_meninggalkan.store');
 
         // medical 
-       Route::get('medical', [MedicalController::class, 'index'])->name('staff.medical.index');
-Route::post('medical', [MedicalController::class, 'store'])->name('staff.medical.store');
+        Route::get('medical', [MedicalController::class, 'index'])->name('staff.medical.index');
+        Route::post('medical', [MedicalController::class, 'store'])->name('staff.medical.store');
     });
 });

@@ -27,7 +27,7 @@
             <div class="col-7">
               <div class="numbers">
                 <p class="card-category">Total Karyawan</p>
-                <h4 class="card-title">120</h4>
+        <h4 class="card-title">{{ $totalKaryawan }}</h4>
               </div>
             </div>
           </div>
