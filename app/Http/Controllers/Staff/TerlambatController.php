@@ -24,7 +24,7 @@ class TerlambatController extends Controller
         $user = Auth::user();
 
         $request->validate([
-            'tanggal_terlambat' => 'required|date',
+            'tanggal_terlambat' => 'required|date|in:' . date('Y-m-d'),
             'jam_masuk' => 'required',
             'total_waktu_terlambat' => 'required|numeric|min:0',
             'alasan' => 'required|string|max:255', // ✅ pakai nama kolom dari DB

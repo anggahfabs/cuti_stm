@@ -10,41 +10,41 @@
         <div class="card-body">
             <h3 class="mb-4 fw-semibold">Ajukan Cuti</h3>
 
-{{-- Notifikasi Sukses --}}
-@if(session('success'))
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: "{{ addslashes(session('success')) }}",
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-            });
-        });
-    </script>
-@endif
+            {{-- Notifikasi Sukses --}}
+            @if(session('success'))
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: "{{ addslashes(session('success')) }}",
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                    });
+                });
+            </script>
+            @endif
 
 
             {{-- ALERT ERROR --}}
             @if ($errors->any())
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Gagal!',
-                            html: '{!! implode("<br>", $errors->all()) !!}',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 4000,
-                            timerProgressBar: true,
-                        });
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal!',
+                        html: '{!! implode("<br>", $errors->all()) !!}',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 4000,
+                        timerProgressBar: true,
                     });
-                </script>
+                });
+            </script>
             @endif
 
             {{-- FORM AJUKAN CUTI --}}
@@ -118,14 +118,14 @@
 
                     <!-- Pengganti -->
                     <div class="col-md-6">
-    <label for="pengganti_id" class="form-label fw-semibold">Pengganti/Backup</label>
-    <select class="form-control" id="pengganti_id" name="pengganti_id" required>
-        <option value="">Pilih Pengganti</option>
-        @foreach ($penggantiList as $p)
-            <option value="{{ $p->user_id }}">{{ $p->nama_lengkap }}</option>
-        @endforeach
-    </select>
-</div>
+                        <label for="pengganti_id" class="form-label fw-semibold">Pengganti/Backup</label>
+                        <select class="form-control" id="pengganti_id" name="pengganti_id" required>
+                            <option value="">Pilih Pengganti</option>
+                            @foreach ($penggantiList as $p)
+                            <option value="{{ $p->user_id }}">{{ $p->nama_lengkap }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Tombol -->

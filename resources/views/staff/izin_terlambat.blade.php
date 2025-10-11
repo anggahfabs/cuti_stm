@@ -8,42 +8,42 @@
     <div class="card-body">
       <h3 class="mb-4 fw-semibold">Form Pengajuan Terlambat</h3>
 
-{{-- Notifikasi Sukses --}}
-@if(session('success'))
-    <script>
+      {{-- Notifikasi Sukses --}}
+      @if(session('success'))
+      <script>
         document.addEventListener("DOMContentLoaded", function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: "{{ addslashes(session('success')) }}",
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-            });
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: "{{ addslashes(session('success')) }}",
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+          });
         });
-    </script>
-@endif
+      </script>
+      @endif
 
 
       {{-- ALERT ERROR --}}
-            @if ($errors->any())
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Gagal!',
-                            html: '{!! implode("<br>", $errors->all()) !!}',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 4000,
-                            timerProgressBar: true,
-                        });
-                    });
-                </script>
-            @endif
+      @if ($errors->any())
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            html: '{!! implode("<br>", $errors->all()) !!}',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+          });
+        });
+      </script>
+      @endif
 
       {{-- FORM --}}
       <form action="{{ route('staff.izin_terlambat.store') }}" method="POST">
@@ -79,8 +79,16 @@
           {{-- Tanggal Terlambat --}}
           <div class="col-md-6 col-lg-4">
             <label for="tanggal_terlambat" class="form-label fw-semibold">Tanggal Terlambat</label>
-            <input type="date" class="form-control" id="tanggal_terlambat"
-              name="tanggal_terlambat" required>
+            @php $today = date('Y-m-d'); @endphp
+            <input
+              type="date"
+              class="form-control"
+              id="tanggal_terlambat"
+              name="tanggal_terlambat"
+              value="{{ $today }}"
+              min="{{ $today }}"
+              max="{{ $today }}"
+              required>
           </div>
 
           {{-- Jam Datang --}}
@@ -94,7 +102,7 @@
           <div class="col-md-6 col-lg-4">
             <label for="total_waktu_terlambat" class="form-label fw-semibold">Total Waktu Terlambat (menit)</label>
             <input type="number" class="form-control" id="total_waktu_terlambat"
-              name="total_waktu_terlambat" readonly>
+              name="total_waktu_terlambat" placeholder="Menit" readonly>
           </div>
 
           {{-- Alasan --}}
@@ -121,7 +129,7 @@
   function hitungKeterlambatan() {
     const jamMasukNormal = "08:00"; // Jam masuk normal (ubah kalau perlu)
     const jamMasuk = document.getElementById("jam_masuk").value;
-    const output = document.getElementById("total_waktu_terlambat");
+    const output = document.getElementById("total_waktu_terlambat", );
 
     if (!jamMasuk) {
       output.value = "";

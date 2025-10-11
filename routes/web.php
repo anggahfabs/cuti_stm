@@ -58,7 +58,7 @@ Route::middleware([Authenticate::class])->group(function () {
         // CRUD Karyawan
         Route::get('karyawan', [KaryawanController::class, 'index'])->name('superadmin.karyawan');
         Route::post('karyawan', [KaryawanController::class, 'store'])->name('superadmin.karyawan.store');
-        Route::put('karyawan/{id}', [KaryawanController::class, 'update'])->name('superadmin.karyawan.update');
+       Route::put('karyawan/{id}', [KaryawanController::class, 'update'])->name('superadmin.karyawan.update');
         Route::delete('karyawan/{id}', [KaryawanController::class, 'destroy'])->name('superadmin.karyawan.destroy');
     });
 

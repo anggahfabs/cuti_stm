@@ -12,42 +12,42 @@
         <strong>Catatan:</strong> Pengajuan izin hanya dapat dilakukan di tanggal yang sama dengan izin diberikan (tidak bisa sebelum atau sesudah hari ini).
       </div>
 
-{{-- Notifikasi Sukses --}}
-@if(session('success'))
-    <script>
+      {{-- Notifikasi Sukses --}}
+      @if(session('success'))
+      <script>
         document.addEventListener("DOMContentLoaded", function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: "{{ addslashes(session('success')) }}",
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-            });
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: "{{ addslashes(session('success')) }}",
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+          });
         });
-    </script>
-@endif
+      </script>
+      @endif
 
 
       {{-- ALERT ERROR --}}
-            @if ($errors->any())
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Gagal!',
-                            html: '{!! implode("<br>", $errors->all()) !!}',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 4000,
-                            timerProgressBar: true,
-                        });
-                    });
-                </script>
-            @endif
+      @if ($errors->any())
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            html: '{!! implode("<br>", $errors->all()) !!}',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+          });
+        });
+      </script>
+      @endif
 
       <form action="{{ route('staff.izin_meninggalkan.store') }}" method="POST">
         @csrf
@@ -69,12 +69,6 @@
             <label for="departemen" class="form-label fw-semibold">Departemen</label>
             <input type="text" class="form-control" id="departemen" value="{{ $user->departemen->nama_departemen ?? 'Belum diatur' }}" disabled>
           </div>
-
-          <!-- Tanggal Masuk Kerja -->
-          <!-- <div class="col-md-6 col-lg-4">
-            <label for="tgl_masuk" class="form-label fw-semibold">Hari/Tanggal Masuk</label>
-            <input type="text" class="form-control" id="tgl_masuk" value="{{ $user->tanggal_masuk ?? '' }}" disabled>
-          </div> -->
 
           <!-- Tanggal Izin (hanya hari ini) -->
           <div class="col-md-6 col-lg-4">
@@ -105,10 +99,10 @@
 
           <!-- Total Waktu Kerja -->
           <div class="col-md-6 col-lg-4">
-  <label for="total_waktu" class="form-label fw-semibold">Total Waktu</label>
-  <input type="hidden" id="total_waktu_menit" name="total_waktu_kerja">
-  <input type="text" class="form-control" id="total_waktu_display" readonly>
-</div>
+            <label for="total_waktu" class="form-label fw-semibold">Total Waktu</label>
+            <input type="hidden" id="total_waktu_menit" name="total_waktu_kerja">
+            <input type="text" class="form-control" id="total_waktu_display" readonly>
+          </div>
 
           <!-- Keterangan -->
           <div class="col-md-12">
@@ -127,38 +121,38 @@
 
 @endsection
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const jamMasukInput = document.getElementById('jam_masuk');
-  const jamKeluarInput = document.getElementById('jam_keluar');
-  const totalDisplay = document.getElementById('total_waktu_display');
-  const totalHidden = document.getElementById('total_waktu_menit');
+  document.addEventListener('DOMContentLoaded', function() {
+    const jamMasukInput = document.getElementById('jam_masuk');
+    const jamKeluarInput = document.getElementById('jam_keluar');
+    const totalDisplay = document.getElementById('total_waktu_display');
+    const totalHidden = document.getElementById('total_waktu_menit');
 
-  function hitungTotalWaktu() {
-    const jamMasuk = jamMasukInput.value;
-    const jamKeluar = jamKeluarInput.value;
+    function hitungTotalWaktu() {
+      const jamMasuk = jamMasukInput.value;
+      const jamKeluar = jamKeluarInput.value;
 
-    if (jamMasuk && jamKeluar) {
-      const [hMasuk, mMasuk] = jamMasuk.split(':').map(Number);
-      const [hKeluar, mKeluar] = jamKeluar.split(':').map(Number);
+      if (jamMasuk && jamKeluar) {
+        const [hMasuk, mMasuk] = jamMasuk.split(':').map(Number);
+        const [hKeluar, mKeluar] = jamKeluar.split(':').map(Number);
 
-      const waktuMasuk = hMasuk * 60 + mMasuk;
-      const waktuKeluar = hKeluar * 60 + mKeluar;
+        const waktuMasuk = hMasuk * 60 + mMasuk;
+        const waktuKeluar = hKeluar * 60 + mKeluar;
 
-      let selisihMenit = waktuKeluar - waktuMasuk;
-      if (selisihMenit < 0) selisihMenit += 24 * 60;
+        let selisihMenit = waktuKeluar - waktuMasuk;
+        if (selisihMenit < 0) selisihMenit += 24 * 60;
 
-      const jam = Math.floor(selisihMenit / 60);
-      const menit = selisihMenit % 60;
+        const jam = Math.floor(selisihMenit / 60);
+        const menit = selisihMenit % 60;
 
-      totalDisplay.value = `${jam} jam ${menit} menit`;
-      totalHidden.value = selisihMenit; // ini yg dikirim ke DB
-    } else {
-      totalDisplay.value = '';
-      totalHidden.value = '';
+        totalDisplay.value = `${jam} jam ${menit} menit`;
+        totalHidden.value = selisihMenit; // ini yg dikirim ke DB
+      } else {
+        totalDisplay.value = '';
+        totalHidden.value = '';
+      }
     }
-  }
 
-  jamMasukInput.addEventListener('change', hitungTotalWaktu);
-  jamKeluarInput.addEventListener('change', hitungTotalWaktu);
-});
+    jamMasukInput.addEventListener('change', hitungTotalWaktu);
+    jamKeluarInput.addEventListener('change', hitungTotalWaktu);
+  });
 </script>
